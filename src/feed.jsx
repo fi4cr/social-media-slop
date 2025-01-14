@@ -8,6 +8,8 @@ const initialPosts = [
     avatar: "JS",
     timestamp: "2 hrs ago",
     content: "Just finished my first marathon! 🏃‍♀️ Feeling accomplished and exhausted at the same time. Thank you to everyone who supported me along the way! #running #achievement",
+    image: "/social-media-slop/photo-of-exhausted-runner-crossing-finish-line.jpg",
+    imageDescription: "A photo of an exhausted but happy runner crossing the marathon finish line with their arms raised in triumph",
     likes: 142,
     comments: [
       { id: 1, author: "Mike Johnson", avatar: "MJ", content: "Amazing achievement! 👏", timestamp: "1 hr ago" },
@@ -21,6 +23,8 @@ const initialPosts = [
     avatar: "JD",
     timestamp: "4 hrs ago",
     content: "Made some homemade pizza tonight! 🍕 Nothing beats the satisfaction of making it from scratch.",
+    image: "/social-media-slop/photo-of-freshly-baked-homemade-pizza.jpg",
+    imageDescription: "A photo of a rustic homemade pizza with melted cheese, fresh basil, and a perfectly crispy crust",
     likes: 89,
     comments: [
       { id: 1, author: "Emma Davis", avatar: "ED", content: "Recipe please! 😋", timestamp: "2 hrs ago" }
@@ -33,6 +37,8 @@ const initialPosts = [
     avatar: "TD",
     timestamp: "6 hrs ago",
     content: "Breaking: New breakthrough in quantum computing promises to revolutionize data processing. Scientists say this could lead to significant advances in artificial intelligence and cryptography.",
+    image: "/social-media-slop/photo-of-quantum-computing-research-lab.jpg",
+    imageDescription: "A photo of scientists working in a quantum computing research laboratory with advanced equipment",
     likes: 1247,
     comments: [
       { id: 1, author: "Tech Enthusiast", avatar: "TE", content: "This is groundbreaking!", timestamp: "5 hrs ago" }
@@ -45,6 +51,8 @@ const initialPosts = [
     avatar: "TA",
     timestamp: "8 hrs ago",
     content: "🌅 Sunset in Santorini - sometimes a picture is worth a thousand words. Who's been here? Share your experiences below! #Greece #Travel #Wanderlust",
+    image: "/social-media-slop/photo-of-two-people-in-front-of-a-greek-city.jpg",
+    imageDescription: "A photo of two people standing in front of the iconic white buildings and blue domes of Santorini at sunset",
     likes: 2389,
     comments: [
       { id: 1, author: "Wanderlust", avatar: "WL", content: "On my bucket list! 😍", timestamp: "7 hrs ago" }
@@ -57,6 +65,8 @@ const initialPosts = [
     avatar: "FC",
     timestamp: "12 hrs ago",
     content: "Just discovered this hidden gem of a ramen shop! The broth has been simmering for 48 hours and you can taste the depth of flavor in every spoonful. 🍜 #FoodieLife #Ramen",
+    image: "/social-media-slop/photo-of-authentic-japanese-ramen.jpg",
+    imageDescription: "A photo of a steaming bowl of authentic Japanese ramen with perfectly arranged toppings and a rich, golden broth",
     likes: 543,
     comments: [
       { id: 1, author: "Ramen Lover", avatar: "RL", content: "Location please! 🙏", timestamp: "11 hrs ago" }
@@ -148,6 +158,17 @@ export default function FacebookFeed() {
 
             {/* Post Content */}
             <p className="mb-4">{post.content}</p>
+            {post.image && (
+              <div className="mb-4">
+                <img 
+                  src={post.image} 
+                  alt={post.imageDescription} 
+                  className="w-full h-auto rounded-lg object-cover"
+                  onError={(e) => e.target.style.display = 'none'}
+                />
+                <p className="text-sm text-gray-500 mt-1 italic">{post.imageDescription}</p>
+              </div>
+            )}
 
             {/* Post Stats */}
             <div className="flex items-center justify-between text-gray-500 text-sm mb-4 border-b border-t py-2">
