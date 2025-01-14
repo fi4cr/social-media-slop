@@ -8,7 +8,7 @@ const initialPosts = [
     avatar: "JS",
     timestamp: "2 hrs ago",
     content: "Just finished my first marathon! 🏃‍♀️ Feeling accomplished and exhausted at the same time. Thank you to everyone who supported me along the way! #running #achievement",
-    image: "/social-media-slop/photo-of-exhausted-runner-crossing-finish-line.jpg",
+    image: "/dist/photo-of-exhausted-runner-crossing-finish-line.jpg",
     imageDescription: "A photo of an exhausted but happy runner crossing the marathon finish line with their arms raised in triumph",
     likes: 142,
     comments: [
@@ -23,7 +23,7 @@ const initialPosts = [
     avatar: "JD",
     timestamp: "4 hrs ago",
     content: "Made some homemade pizza tonight! 🍕 Nothing beats the satisfaction of making it from scratch.",
-    image: "/social-media-slop/photo-of-freshly-baked-homemade-pizza.jpg",
+    image: "/dist/photo-of-freshly-baked-homemade-pizza.jpg",
     imageDescription: "A photo of a rustic homemade pizza with melted cheese, fresh basil, and a perfectly crispy crust",
     likes: 89,
     comments: [
@@ -37,7 +37,7 @@ const initialPosts = [
     avatar: "TD",
     timestamp: "6 hrs ago",
     content: "Breaking: New breakthrough in quantum computing promises to revolutionize data processing. Scientists say this could lead to significant advances in artificial intelligence and cryptography.",
-    image: "/social-media-slop/photo-of-quantum-computing-research-lab.jpg",
+    image: "/dist/photo-of-quantum-computing-research-lab.jpg",
     imageDescription: "A photo of scientists working in a quantum computing research laboratory with advanced equipment",
     likes: 1247,
     comments: [
@@ -51,7 +51,7 @@ const initialPosts = [
     avatar: "TA",
     timestamp: "8 hrs ago",
     content: "🌅 Sunset in Santorini - sometimes a picture is worth a thousand words. Who's been here? Share your experiences below! #Greece #Travel #Wanderlust",
-    image: "/social-media-slop/photo-of-two-people-in-front-of-a-greek-city.jpg",
+    image: "/dist/photo-of-two-people-in-front-of-a-greek-city.jpg",
     imageDescription: "A photo of two people standing in front of the iconic white buildings and blue domes of Santorini at sunset",
     likes: 2389,
     comments: [
@@ -65,7 +65,7 @@ const initialPosts = [
     avatar: "FC",
     timestamp: "12 hrs ago",
     content: "Just discovered this hidden gem of a ramen shop! The broth has been simmering for 48 hours and you can taste the depth of flavor in every spoonful. 🍜 #FoodieLife #Ramen",
-    image: "/social-media-slop/photo-of-authentic-japanese-ramen.jpg",
+    image: "/dist/photo-of-authentic-japanese-ramen.jpg",
     imageDescription: "A photo of a steaming bowl of authentic Japanese ramen with perfectly arranged toppings and a rich, golden broth",
     likes: 543,
     comments: [
