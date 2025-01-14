@@ -22,7 +22,7 @@ const defaultConfig = {
   num_images: 1,
   output_format: "jpeg",
   guidance_scale: 3.5,
-  num_inference_steps: 28,
+  num_inference_steps: 40,
   enable_safety_checker: true,
   loras: [
     {
@@ -94,5 +94,11 @@ async function generateImage(prompt, config = defaultConfig) {
 // Get prompt from command line arguments or use default
 const prompt = process.argv[2] || "A house party";
 
-// Run the generator with default config including LORA
-generateImage(prompt).catch(console.error);
+// Export the generateImage function
+export { generateImage };
+
+// Only run if called directly (not imported)
+if (import.meta.url === new URL(import.meta.url).href) {
+  const prompt = process.argv[2] || "A house party";
+  generateImage(prompt).catch(console.error);
+}

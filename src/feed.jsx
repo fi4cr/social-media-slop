@@ -1,77 +1,103 @@
 import React, { useState } from 'react';
 import { Heart, MessageCircle, Share2, MoreHorizontal, ThumbsUp, Send } from 'lucide-react';
 
+// Get base URL from Vite
+const baseUrl = import.meta.env.BASE_URL;
+
 const initialPosts = [
   {
-    id: 1,
-    author: "Jane Smith",
-    avatar: "JS",
-    timestamp: "2 hrs ago",
-    content: "Just finished my first marathon! 🏃‍♀️ Feeling accomplished and exhausted at the same time. Thank you to everyone who supported me along the way! #running #achievement",
-    image: "/dist/photo-of-exhausted-runner-crossing-finish-line.jpg",
-    imageDescription: "A photo of an exhausted but happy runner crossing the marathon finish line with their arms raised in triumph",
-    likes: 142,
-    comments: [
-      { id: 1, author: "Mike Johnson", avatar: "MJ", content: "Amazing achievement! 👏", timestamp: "1 hr ago" },
-      { id: 2, author: "Sarah Wilson", avatar: "SW", content: "You're inspiring! 🌟", timestamp: "30 min ago" }
+    "id": 1,
+    "author": "Emily Johnson",
+    "avatar": "EJ",
+    "timestamp": "3 hrs ago",
+    "content": "Another day, another cup of coffee ☕️ #MorningRoutine #CaffeineFixNeeded",
+    "image": "photo-of-woman-drinking-coffee.jpg",
+    "imageDescription": "Photo of a woman drinking coffee at a cafe",
+    "likes": 112,
+    "comments": [
+      {
+        "id": 1,
+        "author": "Sarah Lee",
+        "avatar": "SL",
+        "content": "I feel you! Coffee is a must for me too.",
+        "timestamp": "2 hrs ago"
+      }
     ],
-    shares: 5
+    "shares": 5
   },
   {
-    id: 2,
-    author: "John Doe",
-    avatar: "JD",
-    timestamp: "4 hrs ago",
-    content: "Made some homemade pizza tonight! 🍕 Nothing beats the satisfaction of making it from scratch.",
-    image: "/dist/photo-of-freshly-baked-homemade-pizza.jpg",
-    imageDescription: "A photo of a rustic homemade pizza with melted cheese, fresh basil, and a perfectly crispy crust",
-    likes: 89,
-    comments: [
-      { id: 1, author: "Emma Davis", avatar: "ED", content: "Recipe please! 😋", timestamp: "2 hrs ago" }
+    "id": 2,
+    "author": "Michael Thompson",
+    "avatar": "MT",
+    "timestamp": "6 hrs ago",
+    "content": "Laundry day 🧺🧽 Time to tackle the never-ending pile of clothes! 😅 #AdultingIsHard #LaundryLife",
+    "image": "photo-of-man-doing-laundry.jpg",
+    "imageDescription": "Photo of a man sorting laundry at home",
+    "likes": 78,
+    "comments": [
+      {
+        "id": 1,
+        "author": "Jessica Davis",
+        "avatar": "JD",
+        "content": "I feel your pain! Laundry is the worst chore ever.",
+        "timestamp": "5 hrs ago"
+      },
+      {
+        "id": 2,
+        "author": "David Wilson",
+        "avatar": "DW",
+        "content": "At least you're getting it done! Procrastination is my middle name when it comes to laundry.",
+        "timestamp": "4 hrs ago"
+      }
     ],
-    shares: 2
+    "shares": 3
   },
   {
-    id: 3,
-    author: "Tech News Daily",
-    avatar: "TD",
-    timestamp: "6 hrs ago",
-    content: "Breaking: New breakthrough in quantum computing promises to revolutionize data processing. Scientists say this could lead to significant advances in artificial intelligence and cryptography.",
-    image: "/dist/photo-of-quantum-computing-research-lab.jpg",
-    imageDescription: "A photo of scientists working in a quantum computing research laboratory with advanced equipment",
-    likes: 1247,
-    comments: [
-      { id: 1, author: "Tech Enthusiast", avatar: "TE", content: "This is groundbreaking!", timestamp: "5 hrs ago" }
+    "id": 3,
+    "author": "Sophia Rodriguez",
+    "avatar": "SR",
+    "timestamp": "10 hrs ago",
+    "content": "Saturday morning grocery run 🛒🥕🍅 Stocking up for the week ahead! #WeeklyGroceries #FoodPrep",
+    "image": "photo-of-woman-shopping-groceries.jpg",
+    "imageDescription": "Photo of a woman shopping for groceries at the supermarket",
+    "likes": 94,
+    "comments": [
+      {
+        "id": 1,
+        "author": "Andrew Lee",
+        "avatar": "AL",
+        "content": "Meal prepping is the way to go! Saves so much time during the week.",
+        "timestamp": "9 hrs ago"
+      }
     ],
-    shares: 89
+    "shares": 2
   },
   {
-    id: 4,
-    author: "Travel Adventures",
-    avatar: "TA",
-    timestamp: "8 hrs ago",
-    content: "🌅 Sunset in Santorini - sometimes a picture is worth a thousand words. Who's been here? Share your experiences below! #Greece #Travel #Wanderlust",
-    image: "/dist/photo-of-two-people-in-front-of-a-greek-city.jpg",
-    imageDescription: "A photo of two people standing in front of the iconic white buildings and blue domes of Santorini at sunset",
-    likes: 2389,
-    comments: [
-      { id: 1, author: "Wanderlust", avatar: "WL", content: "On my bucket list! 😍", timestamp: "7 hrs ago" }
+    "id": 4,
+    "author": "Jacob Davis",
+    "avatar": "JD",
+    "timestamp": "1 day ago",
+    "content": "Finally got around to cleaning the garage 🧹🚗 #SpringCleaning #OrganizationGoals",
+    "image": "photo-of-man-cleaning-garage.jpg",
+    "imageDescription": "Photo of a man cleaning and organizing his garage",
+    "likes": 132,
+    "comments": [
+      {
+        "id": 1,
+        "author": "Emily Thompson",
+        "avatar": "ET",
+        "content": "Looks great! I need to do the same with my garage soon.",
+        "timestamp": "22 hrs ago"
+      },
+      {
+        "id": 2,
+        "author": "Michael Johnson",
+        "avatar": "MJ",
+        "content": "Satisfying before and after photos! Well done!",
+        "timestamp": "20 hrs ago"
+      }
     ],
-    shares: 156
-  },
-  {
-    id: 5,
-    author: "Foodie Chronicles",
-    avatar: "FC",
-    timestamp: "12 hrs ago",
-    content: "Just discovered this hidden gem of a ramen shop! The broth has been simmering for 48 hours and you can taste the depth of flavor in every spoonful. 🍜 #FoodieLife #Ramen",
-    image: "/dist/photo-of-authentic-japanese-ramen.jpg",
-    imageDescription: "A photo of a steaming bowl of authentic Japanese ramen with perfectly arranged toppings and a rich, golden broth",
-    likes: 543,
-    comments: [
-      { id: 1, author: "Ramen Lover", avatar: "RL", content: "Location please! 🙏", timestamp: "11 hrs ago" }
-    ],
-    shares: 23
+    "shares": 8
   }
 ];
 
@@ -166,7 +192,6 @@ export default function FacebookFeed() {
                   className="w-full h-auto rounded-lg object-cover"
                   onError={(e) => e.target.style.display = 'none'}
                 />
-                <p className="text-sm text-gray-500 mt-1 italic">{post.imageDescription}</p>
               </div>
             )}
 
