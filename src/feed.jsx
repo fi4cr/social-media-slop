@@ -5,75 +5,9 @@ import { Heart, MessageCircle, Share2, MoreHorizontal, ThumbsUp, Send } from 'lu
 const baseUrl = import.meta.env.BASE_URL;
 
 const initialPosts = [
+  
   {
-    "id": 1,
-    "author": "Emily Johnson",
-    "avatar": "EJ",
-    "timestamp": "3 hrs ago",
-    "content": "Another day, another cup of coffee ☕️ #MorningRoutine #CaffeineFixNeeded",
-    "image": "photo-of-woman-drinking-coffee.jpg",
-    "imageDescription": "Photo of a woman drinking coffee at a cafe",
-    "likes": 112,
-    "comments": [
-      {
-        "id": 1,
-        "author": "Sarah Lee",
-        "avatar": "SL",
-        "content": "I feel you! Coffee is a must for me too.",
-        "timestamp": "2 hrs ago"
-      }
-    ],
-    "shares": 5
-  },
-  {
-    "id": 2,
-    "author": "Michael Thompson",
-    "avatar": "MT",
-    "timestamp": "6 hrs ago",
-    "content": "Laundry day 🧺🧽 Time to tackle the never-ending pile of clothes! 😅 #AdultingIsHard #LaundryLife",
-    "image": "photo-of-man-doing-laundry.jpg",
-    "imageDescription": "Photo of a man sorting laundry at home",
-    "likes": 78,
-    "comments": [
-      {
-        "id": 1,
-        "author": "Jessica Davis",
-        "avatar": "JD",
-        "content": "I feel your pain! Laundry is the worst chore ever.",
-        "timestamp": "5 hrs ago"
-      },
-      {
-        "id": 2,
-        "author": "David Wilson",
-        "avatar": "DW",
-        "content": "At least you're getting it done! Procrastination is my middle name when it comes to laundry.",
-        "timestamp": "4 hrs ago"
-      }
-    ],
-    "shares": 3
-  },
-  {
-    "id": 3,
-    "author": "Sophia Rodriguez",
-    "avatar": "SR",
-    "timestamp": "10 hrs ago",
-    "content": "Saturday morning grocery run 🛒🥕🍅 Stocking up for the week ahead! #WeeklyGroceries #FoodPrep",
-    "image": "photo-of-woman-shopping-groceries.jpg",
-    "imageDescription": "Photo of a woman shopping for groceries at the supermarket",
-    "likes": 94,
-    "comments": [
-      {
-        "id": 1,
-        "author": "Andrew Lee",
-        "avatar": "AL",
-        "content": "Meal prepping is the way to go! Saves so much time during the week.",
-        "timestamp": "9 hrs ago"
-      }
-    ],
-    "shares": 2
-  },
-  {
-    "id": 4,
+    "id": 8,
     "author": "Jacob Davis",
     "avatar": "JD",
     "timestamp": "1 day ago",
@@ -98,8 +32,96 @@ const initialPosts = [
       }
     ],
     "shares": 8
+  },
+  {
+    "id": 1,
+    "author": "Emily Davis",
+    "avatar": "ED",
+    "timestamp": "3 hrs ago",
+    "content": "Laundry day chaos! 🧺😩 Trying to tackle the mountain of clothes while the kids are making an even bigger mess. #MomLife #CleaningFrenzy 🧹",
+    "image": "photo-of-messy-laundry-room.jpg",
+    "imageDescription": "Photo of a cluttered laundry room with piles of clothes and toys scattered around.",
+    "likes": 87,
+    "comments": [
+      {
+        "id": 1,
+        "author": "Sarah Johnson",
+        "avatar": "SJ",
+        "content": "I feel your pain! The struggle is real.",
+        "timestamp": "2 hrs ago"
+      }
+    ],
+    "shares": 5
+  },
+  {
+    "id": 3,
+    "author": "David Lee",
+    "avatar": "DL",
+    "timestamp": "9 hrs ago",
+    "content": "Trying to cook dinner in this mess is a real challenge! 🍽️🌋 But hey, at least the kitchen smells amazing. 😋 #CookingAdventures #MessyKitchen 🍴",
+    "image": "photo-of-messy-kitchen.jpg",
+    "imageDescription": "Photo of a kitchen with dirty dishes piled in the sink, food scraps on the counter, and pots and pans scattered around.",
+    "likes": 68,
+    "comments": [
+      {
+        "id": 1,
+        "author": "Samantha Brown",
+        "avatar": "SB",
+        "content": "I can relate! Cooking is always a battle with the mess.",
+        "timestamp": "8 hrs ago"
+      }
+    ],
+    "shares": 3
+  },
+  {
+    "id": 4,
+    "author": "Sophia Rodriguez",
+    "avatar": "SR",
+    "timestamp": "12 hrs ago",
+    "content": "Spring cleaning in full swing! 🌸🧹 Trying to declutter and organize, but it's a never-ending battle. 😅 At least the house smells fresh! 🌼 #SpringCleaning #OrganizationGoals 📦",
+    "image": "photo-of-messy-bedroom.jpg",
+    "imageDescription": "Photo of a bedroom with clothes, books, and other items strewn across the floor and bed, as the owner attempts to sort and organize.",
+    "likes": 94,
+    "comments": [
+      {
+        "id": 1,
+        "author": "Emily Davis",
+        "avatar": "ED",
+        "content": "I feel you! Spring cleaning is always a huge task, but so satisfying when it's done.",
+        "timestamp": "11 hrs ago"
+      }
+    ],
+    "shares": 6
+  },
+  {
+    "id": 6,
+    "author": "Michael Thompson",
+    "avatar": "MT",
+    "timestamp": "6 hrs ago",
+    "content": "Laundry day 🧺🧽 Time to tackle the never-ending pile of clothes! 😅 #AdultingIsHard #LaundryLife",
+    "image": "photo-of-man-doing-laundry.jpg",
+    "imageDescription": "Photo of a man sorting laundry at home",
+    "likes": 78,
+    "comments": [
+      {
+        "id": 1,
+        "author": "Jessica Davis",
+        "avatar": "JD",
+        "content": "I feel your pain! Laundry is the worst chore ever.",
+        "timestamp": "5 hrs ago"
+      },
+      {
+        "id": 2,
+        "author": "David Wilson",
+        "avatar": "DW",
+        "content": "At least you're getting it done! Procrastination is my middle name when it comes to laundry.",
+        "timestamp": "4 hrs ago"
+      }
+    ],
+    "shares": 3
   }
 ];
+
 
 export default function FacebookFeed() {
   const [posts, setPosts] = useState(initialPosts);

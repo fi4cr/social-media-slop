@@ -34,7 +34,7 @@ const anthropic = new Anthropic({
 // Set FAL key for image generation
 process.env.FAL_KEY = FAL_KEY;
 
-const PROMPT = `Generate an array of 4 social media posts in valid JSON format. The posts should be about: people doing mundane everyday things in life.
+const PROMPT = `Generate an array of 4 social media posts in valid JSON format. The posts should be about: people doing chores with messy surroundings.
 
 Return ONLY the JSON array with no additional text or markdown formatting. Each post object must follow this exact structure:
 [
@@ -60,7 +60,7 @@ Return ONLY the JSON array with no additional text or markdown formatting. Each 
   }
 ]
 
-Make the posts feel authentic and engaging with realistic interactions. Ensure all image filenames start with "photo-of-" and all image descriptions start with "Photo of" All images must contain people.`;
+Make the posts feel authentic and engaging with realistic interactions. Ensure all image filenames start with "photo-of-" and all image descriptions start with "Photo of". All images must contain people.`;
 
 async function generatePosts() {
   try {

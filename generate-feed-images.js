@@ -11,21 +11,6 @@ const loraConfig = {
   ]
 };
 
-const imageConfigs = [
-  {
-    prompt: "A slightly lopsided but golden brown sourdough bread loaf cooling on a wire rack",
-    filename: "homemade-sourdough-bread.jpg"
-  },
-  {
-    prompt: "A clean desk with a laptop, notebook, and coffee mug neatly arranged with a small plant in the corner",
-    filename: "organized-desk-setup.jpg"
-  },
-  {
-    prompt: "A golden retriever sniffing at some sidewalk flowers while a hand holds a coffee cup in the background",
-    filename: "dog-smelling-flowers.jpg"
-  }
-];
-
 async function generateFeedImages() {
   console.log("Checking and generating feed images...");
   
